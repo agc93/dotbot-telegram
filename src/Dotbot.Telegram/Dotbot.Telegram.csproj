@@ -4,8 +4,17 @@
     <TargetFramework>netstandard1.6</TargetFramework>
     <DebugType>portable</DebugType>
     <AssemblyName>Dotbot.Telegram</AssemblyName>
-    <PackageId>Dotbot.Telegram</PackageId>
     <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Dotbot.Telegram</PackageId>
+    <PackageProjectUrl>https://github.com/botnetframework/dotbot-telegram/</PackageProjectUrl>
+    <PackageTags>bot;dotbot;telegram;chat;</PackageTags>
+    <PackageLicenseUrl>https://github.com/botnetframework/dotbot-telegram/raw/develop/LICENSE</PackageLicenseUrl>
+    <Description>An adapter for the Dotbot framework (https://github.com/botnetcore/dotbot) for Telegram. Powered by Telegram.Bot by Robin Muller.</Description>
+    <RepositoryUrl>https://github.com/botnetframework/dotbot-telegram/</RepositoryUrl>
+    <Authors>Alistair Chapman</Authors>
   </PropertyGroup>
 
   <ItemGroup>

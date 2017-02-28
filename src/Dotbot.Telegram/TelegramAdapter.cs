@@ -42,6 +42,11 @@ namespace Dotbot.Telegram
             };
 
             _broker.Client.StartReceiving(token);
+            while (!token.IsCancellationRequested) {
+                // stay in exec loop
+            }
+            _log.Information("Adapter terminating.");
+            _broker.Client.StopReceiving();
             return true;
         }
     }
