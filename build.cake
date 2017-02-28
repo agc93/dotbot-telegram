@@ -4,9 +4,6 @@ var target = Argument<string>("target", "Default");
 var config = Argument<string>("configuration", "Release");
 
 var version = new BuildVersion("0.1.0", "local");
-var projects = new DirectoryPath[] {
-    "./src/Dotbot.Telegram"
-};
 
 var solutionPath = File("./src/Dotbot.Telegram.sln");
 var solution = ParseSolution(solutionPath);
@@ -61,10 +58,10 @@ Task("Pack")
     .Does(() =>
 {
     // Publish
-    foreach(var project in projects.Select(p => p.Name))
+    foreach(var project in projects)
     {
-        Information("\nPacking {0}...", project.FullPath);
-        DotNetCorePack(project.FullPath, new DotNetCorePackSettings 
+        Information("\nPacking {0}...", project.Path);
+        DotNetCorePack(project.Path.FullPath, new DotNetCorePackSettings 
         {
             Configuration = config,
             OutputDirectory = "./.artifacts",

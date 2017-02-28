@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <DebugType>portable</DebugType>
+    <AssemblyName>Dotbot.Telegram</AssemblyName>
+    <PackageId>Dotbot.Telegram</PackageId>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dotbot" Version="0.1.0-alpha0015" />
+    <PackageReference Include="Telegram.Bot" Version="10.4.0" />
+  </ItemGroup>
+
+</Project>
