@@ -14,9 +14,7 @@ namespace Dotbot.Telegram
 
             builder.Services.AddSingleton<TelegramAdapter>();
             builder.Services.AddSingleton<IAdapter>(s => s.GetService<TelegramAdapter>());
-
-            builder.Services.AddSingleton<TelegramWorker>();
-            builder.Services.AddSingleton<IWorker>(s => s.GetService<TelegramWorker>());
+            builder.Services.AddSingleton<IWorker>(s => s.GetService<TelegramAdapter>());
 
             builder.Services.AddSingleton<TelegramBroker>();
             builder.Services.AddSingleton<IBroker>(s => s.GetService<TelegramBroker>());
