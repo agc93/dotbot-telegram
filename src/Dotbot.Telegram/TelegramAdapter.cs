@@ -40,7 +40,7 @@ namespace Dotbot.Telegram
                         _queue.Enqueue(new MessageEvent(_broker)
                         {
                             Bot = client.User,
-                            Message = new Message { Text = args.Message.Text, User = args.Message.GetUser() },
+                            Message = new Message {Text = args.Message.Text, User = args.Message.GetUser()},
                             Room = args.Message.GetRoom()
                         });
                     }

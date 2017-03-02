@@ -5,8 +5,10 @@ namespace Dotbot.Telegram
 {
     public static class TelegramBuilder
     {
-        public static RobotBuilder UseTelegram(this RobotBuilder builder, string token) {
-            if (string.IsNullOrWhiteSpace(token)) {
+        public static RobotBuilder UseTelegram(this RobotBuilder builder, string token)
+        {
+            if (string.IsNullOrWhiteSpace(token))
+            {
                 throw new ArgumentNullException(nameof(token));
             }
 

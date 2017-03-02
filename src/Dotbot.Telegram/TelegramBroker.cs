@@ -8,8 +8,8 @@ namespace Dotbot.Telegram
 {
     public class TelegramBroker : Dotbot.IBroker
     {
-        private TelegramConfiguration _configuration;
-        internal TelegramBotClient Client {get; private set;}
+        private readonly TelegramConfiguration _configuration;
+        internal TelegramBotClient Client { get; private set; }
 
         public TelegramBroker(TelegramConfiguration configuration)
         {
@@ -17,16 +17,18 @@ namespace Dotbot.Telegram
             _configuration = configuration;
         }
 
-        internal async Task<TelegramContext> Connect() {
+        internal async Task<TelegramContext> Connect()
+        {
             var bot = new TelegramBotClient(_configuration.Token);
             var valid = await bot.TestApiAsync();
             var me = await bot.GetMeAsync();
             Client = bot;
             return me.ToContext(valid && me != null);
         }
+
         public async Task Broadcast(Room room, string text)
         {
-            var chatId = await Client.GetChatAsync(room.Name);
+            var chatId = await Client.GetChatAsync(room.Id);
             var message = await Client.SendTextMessageAsync(chatId.Id, text);
         }
 
