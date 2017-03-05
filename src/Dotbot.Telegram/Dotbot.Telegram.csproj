@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dotbot" Version="0.1.0-alpha0015" />
+    <PackageReference Include="Dotbot" Version="0.1.0-alpha0021" />
     <PackageReference Include="Telegram.Bot" Version="10.4.0" />
   </ItemGroup>
 

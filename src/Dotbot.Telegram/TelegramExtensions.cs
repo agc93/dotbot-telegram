@@ -22,21 +22,12 @@ namespace Dotbot.Telegram
 
         public static Room GetRoom(this Bot.Types.Message message)
         {
-            return new Room
-            {
-                Id = message.Chat.Id.ToString(),
-                Name = message.Chat.Title
-            };
+            return new Room(message.Chat.Id.ToString(), message.Chat.Title);
         }
 
         public static User ToBotUser(this Bot.Types.User user)
         {
-            return new Dotbot.Models.User
-            {
-                Id = user.Id.ToString(),
-                Username = user.Username ?? user.FirstName,
-                DisplayName = $"{user.FirstName} {user.LastName}"
-            };
+            return new Dotbot.Models.User(user.Id.ToString(), user.Username ?? user.FirstName, $"{user.FirstName} {user.LastName}");
         }
     }
 }

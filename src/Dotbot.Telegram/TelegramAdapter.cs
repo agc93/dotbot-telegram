@@ -37,12 +37,11 @@ namespace Dotbot.Telegram
                 {
                     if (args.Message.Type == Bot.Types.Enums.MessageType.TextMessage)
                     {
-                        _queue.Enqueue(new MessageEvent(_broker)
-                        {
-                            Bot = client.User,
-                            Message = new Message {Text = args.Message.Text, User = args.Message.GetUser()},
-                            Room = args.Message.GetRoom()
-                        });
+                        _queue.Enqueue(new MessageEvent(
+                            client.User,
+                            args.Message.GetRoom(),
+                            new Message(args.Message.GetUser(), args.Message.Text),
+                            _broker));
                     }
                 };
 
